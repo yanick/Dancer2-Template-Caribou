@@ -226,7 +226,7 @@ sub generate_layout_class {
 
     my $inner = path($bou)->slurp;
 
-    eval die qq{
+    eval qq{
 package $name;
 
 use Moose::Role;
