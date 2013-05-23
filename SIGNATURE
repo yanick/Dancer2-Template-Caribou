@@ -1,0 +1,47 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 8f70b070e6590c5d771c94a979ce258bcbfe4ecb AUTHOR_PLEDGE
+SHA1 c50f464adf7d5a9ae41f6b7af5910532f4a865bb Build.PL
+SHA1 64c4e37f573d70a73e0ae22a5362ac909b772a60 CONTRIBUTORS
+SHA1 98457c7502f62995a50bc3416de3dde83290ff0c Changes
+SHA1 f87ac7817e8869d72b9c73e7c6fbea65a8ffe7d5 INSTALL
+SHA1 cf5dc9c929415cfa7133eed863def866ade9774d LICENSE
+SHA1 f1578bbe17aeaea397b7a0c432cccae1844f87d6 MANIFEST
+SHA1 3d2ae2f0d880f3a4845ff72df1e135eb3537c381 META.json
+SHA1 1b818a3cce75565affc2d2b6f1c5f934bced430a META.yml
+SHA1 c17186f6200d27fa8687b12dd9883928318e97e5 README
+SHA1 38f7dc3c58399bac1e40f2b7f9e7218364e95779 README.mkdn
+SHA1 9d8335966c1316ab984722a65b819d3f8506ac47 lib/Dancer2/Template/Caribou.pm
+SHA1 3cbe905b92fbc69d59a06031d5ce6c837b352aa2 t/00-compile.t
+SHA1 52ceca8512d2624dce1421cab8ccfec8134fd21c t/000-report-versions-tiny.t
+SHA1 69d531f33169de526c830100ce763108eab7d0a2 t/hello-views.t
+SHA1 c2194b1193330fc87f52ed720a29a2f639c3afdf t/simple.t
+SHA1 c7889f58c18dc01960e630a7957d23e1ed854efa t/views/howdie/bou
+SHA1 f50fc7f6ccf5ecec8da7c267d519a158a898dc54 t/views/howdie/page.bou
+SHA1 c7889f58c18dc01960e630a7957d23e1ed854efa t/views/hullo/bou
+SHA1 63eaa8529b012e5f1eb69a15983b5d760c449cca t/views/hullo/inner.bou
+SHA1 202dccf52a60cd96cca92170bc979586e33f3c71 t/views/layouts/main/bou
+SHA1 8d265454dd503bd69a073f4365b7f802b2b6b19b t/views/layouts/main/page.bou
+SHA1 b4b6971b642256cd59cca1a2043f57159e4dac5d t/views/welcome/bou
+SHA1 ec3f84bfd7a9ce3246e7592f4134100c6b5ce02b xt/release/unused-vars.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAlGdYlYACgkQ34Hwf+GwC4w7ywCgo3kPg+fGrlEN6mw0KB6UUWqY
+UA8AoMbRcJOwsw1DLescqbvnlMvY/v/i
+=n2PH
+-----END PGP SIGNATURE-----
