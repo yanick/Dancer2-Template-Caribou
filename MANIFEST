@@ -11,10 +11,12 @@ README
 README.mkdn
 SIGNATURE
 lib/Dancer2/Template/Caribou.pm
+lib/Dancer2/Template/Caribou/DancerVariables.pm
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/hello-views.t
 t/simple.t
+t/variables.t
 t/views/howdie/bou
 t/views/howdie/page.bou
 t/views/hullo/bou
