@@ -1,5 +1,41 @@
 package Dancer2::Template::Caribou::DancerVariables;
+BEGIN {
+  $Dancer2::Template::Caribou::DancerVariables::AUTHORITY = 'cpan:YANICK';
+}
+{
+  $Dancer2::Template::Caribou::DancerVariables::VERSION = '0.2.1';
+}
 #ABSTRACT: Role providing Dancer attributes to the template objects
+
+
+use strict;
+use warnings;
+
+use Moose::Role;
+
+
+has "context" => (
+    is => 'ro',
+);
+
+
+sub uri_for {
+    $_[0]->context->request->uri_for($_[1]);
+}
+
+1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Dancer2::Template::Caribou::DancerVariables - Role providing Dancer attributes to the template objects
+
+=head1 VERSION
+
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -24,38 +60,25 @@ package Dancer2::Template::Caribou::DancerVariables;
 C<Dancer2::Template::Caribou::DancerVariables> adds attributes and methods to
 allow interactions with the L<Dancer2> application and its context.
 
-=cut
+=head1 METHODS
 
-use strict;
-use warnings;
-
-use Moose::Role;
-
-=method context()
+=head2 context()
 
 Returns the current L<Dancer2::Core::Context> object.
 
-=cut
-
-has "context" => (
-    is => 'ro',
-);
-
-=method uri_for( $path ) 
+=head2 uri_for( $path ) 
 
 Returns the absolute url for the given C<$path>.
 
+=head1 AUTHOR
+
+Yanick Champoux <yanick@babyl.dyndns.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Yanick Champoux.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
-
-sub uri_for {
-    $_[0]->context->request->uri_for($_[1]);
-}
-
-1;
-
-__END__
-
-
-
-
-

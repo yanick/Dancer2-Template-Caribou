@@ -1,18 +1,11 @@
 Revision history for Dancer2-Template-Caribou
 
-{{$NEXT}}
- [API CHANGES]
-
+0.2.1 2013-06-05
  [BUG FIXES]
  - Adding the role to the class might help. 
 
- [DOCUMENTATION]
-
- [ENHANCEMENTS]
-
- [NEW FEATURES]
-
  [STATISTICS]
+ - code churn: 5 files changed, 27 insertions(+), 5 deletions(-)
 
 0.2.0 2013-06-05
  [ENHANCEMENTS]
