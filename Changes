@@ -8,13 +8,18 @@ Revision history for Dancer2-Template-Caribou
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
- - New D::T::C::DancerVariables role, to give access to dancer environment
-   from within template.
-    
 
  [NEW FEATURES]
 
  [STATISTICS]
+
+0.2.0 2013-06-05
+ [ENHANCEMENTS]
+ - New D::T::C::DancerVariables role, to give access to dancer environment
+   from within template.
+
+ [STATISTICS]
+ - code churn: 5 files changed, 149 insertions(+), 2 deletions(-)
 
 0.1.1 2013-05-22
  [BUG FIXES]
