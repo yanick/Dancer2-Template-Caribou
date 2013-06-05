@@ -306,7 +306,10 @@ package $name;
 use Moose;
 use Template::Caribou;
 
-with 'Template::Caribou';
+with qw/
+    Template::Caribou
+    Dancer2::Template::Caribou::DancerVariables
+/;
 
 has context => (
     is => 'ro',

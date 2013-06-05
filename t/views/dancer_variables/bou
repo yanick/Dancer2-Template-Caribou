@@ -1,0 +1,6 @@
+template inner => sub {
+    my $self  = shift;
+
+   print $self->uri_for('/foo'), "\n";
+   print "context: ", ref $self->context, "\n";
+};

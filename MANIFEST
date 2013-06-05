@@ -17,6 +17,7 @@ t/000-report-versions-tiny.t
 t/hello-views.t
 t/simple.t
 t/variables.t
+t/views/dancer_variables/bou
 t/views/howdie/bou
 t/views/howdie/page.bou
 t/views/hullo/bou

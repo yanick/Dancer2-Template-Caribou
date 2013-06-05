@@ -4,6 +4,7 @@ Revision history for Dancer2-Template-Caribou
  [API CHANGES]
 
  [BUG FIXES]
+ - Adding the role to the class might help. 
 
  [DOCUMENTATION]
 
