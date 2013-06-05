@@ -1,0 +1,49 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 8f70b070e6590c5d771c94a979ce258bcbfe4ecb AUTHOR_PLEDGE
+SHA1 c29407014227d9dec67b0032f185f826d420e78c Build.PL
+SHA1 64c4e37f573d70a73e0ae22a5362ac909b772a60 CONTRIBUTORS
+SHA1 36a940b5431920971f4de9b05f71a66c3e230c2b Changes
+SHA1 f87ac7817e8869d72b9c73e7c6fbea65a8ffe7d5 INSTALL
+SHA1 cf5dc9c929415cfa7133eed863def866ade9774d LICENSE
+SHA1 a49bd99ae7edb05e06188188a74f22778c5a168b MANIFEST
+SHA1 42aa207650bcb29d14bb0a199d18282450bb23c5 META.json
+SHA1 6bf0b3f10110c4d05fd779a20ab2ed60d13cd3e5 META.yml
+SHA1 d6d883b252d96d0a1ccbdf4163c12aa0be190622 README
+SHA1 4d7cd65b6c52d742e82bc503cbcb0ca2c7b15312 README.mkdn
+SHA1 fa5eac67c9a4030033381da894233436e8b01310 lib/Dancer2/Template/Caribou.pm
+SHA1 9f37ecc749bc41bcec7ba3bacf714607e45fcddd lib/Dancer2/Template/Caribou/DancerVariables.pm
+SHA1 3cbe905b92fbc69d59a06031d5ce6c837b352aa2 t/00-compile.t
+SHA1 9c8b3186e6ac629859dabb8a5d231b96dea1dda4 t/000-report-versions-tiny.t
+SHA1 69d531f33169de526c830100ce763108eab7d0a2 t/hello-views.t
+SHA1 c2194b1193330fc87f52ed720a29a2f639c3afdf t/simple.t
+SHA1 9b3766a2dc96fb606193a85d49fe877991510e4d t/variables.t
+SHA1 c7889f58c18dc01960e630a7957d23e1ed854efa t/views/howdie/bou
+SHA1 f50fc7f6ccf5ecec8da7c267d519a158a898dc54 t/views/howdie/page.bou
+SHA1 c7889f58c18dc01960e630a7957d23e1ed854efa t/views/hullo/bou
+SHA1 63eaa8529b012e5f1eb69a15983b5d760c449cca t/views/hullo/inner.bou
+SHA1 202dccf52a60cd96cca92170bc979586e33f3c71 t/views/layouts/main/bou
+SHA1 8d265454dd503bd69a073f4365b7f802b2b6b19b t/views/layouts/main/page.bou
+SHA1 b4b6971b642256cd59cca1a2043f57159e4dac5d t/views/welcome/bou
+SHA1 ec3f84bfd7a9ce3246e7592f4134100c6b5ce02b xt/release/unused-vars.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAlGvWZ0ACgkQ34Hwf+GwC4zZOQCgkwFAD2Un3e0xExe7nvCq1/EZ
+ds4AoITL7T006YHqkfX4tJPdzw7c2qlP
+=rnHc
+-----END PGP SIGNATURE-----
