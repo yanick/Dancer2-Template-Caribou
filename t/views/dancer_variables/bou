@@ -1,4 +1,4 @@
-template inner => sub {
+template inner_template => sub {
     my $self  = shift;
 
    print $self->uri_for('/foo'), "\n";

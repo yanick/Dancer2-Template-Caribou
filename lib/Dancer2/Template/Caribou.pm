@@ -1,6 +1,8 @@
 package Dancer2::Template::Caribou;
 #ABSTRACT: Template::Caribou wrapper for Dancer2
 
+# TODO move away from Dancer2::Test
+
 =head1 SYNOPSIS
 
     # in 'config.yml'
@@ -10,7 +12,6 @@ package Dancer2::Template::Caribou;
       template:
         Caribou:
           namespace:    MyApp::View
-          auto_reload:  1
 
 
     # and then in the application
@@ -98,11 +99,14 @@ above, we could change it into
 
 
     # in /views/howdie/page
-    html {
-        head { title { 'My App' } };
-        body {
-            h1 { 'howdie ' . $self->name . '!' };
-        };
+    sub {
+        my $self = shift;
+        html {
+            head { title { 'My App' } };
+            body {
+                h1 { 'howdie ' . $self->name . '!' };
+            };
+        }
     }
 
 =head3 Layouts as roles
@@ -146,13 +150,6 @@ the template class. Again, to take our example:
 The namespace under which the Caribou classes are created.
 defaults to C<Dancer2::View>.
 
-=item auto_reload
-
-If set to C<true>, the Caribou object will verify if any of the 
-template files have changed before rendering and, if that's the case,
-will self-update. Defaults to C<false>.
-
-
 =back
 
 =head1 CONVENIENCE ATTRIBUTES AND METHODS
@@ -165,11 +162,9 @@ classes, you simply have to apply the role to have access to the same niftiness.
 
     package Dancer2::View::MyView;
 
-    use Moose;
     use Template::Caribou;
 
     with qw/ 
-        Template::Caribou 
         Dancer2::Template::Caribou::DancerVariables 
     /;
 
@@ -213,11 +208,6 @@ has view_class => (
 has layout_class => (
     is => 'ro',
     default => sub { { } },
-);
-
-has auto_reload => (
-    is => 'ro',
-    default => sub { 0 },
 );
 
 has namespace => (
@@ -265,15 +255,12 @@ package $name;
 use Moose::Role;
 use Template::Caribou;
 
-with 'Template::Caribou';
-
 # line 1 "$bou"
 
 $inner;
 
 with 'Template::Caribou::Files' => {
     dirs => [ '$bou_dir' ],
-    auto_reload => 1,
 };
 
 1;
@@ -298,16 +285,12 @@ sub generate_view_class {
 
     my $inner = path($bou)->slurp;
 
-    my $auto_reload = $self->auto_reload;
-
     eval qq{
 package $name;
 
-use Moose;
 use Template::Caribou;
 
 with qw/
-    Template::Caribou
     Dancer2::Template::Caribou::DancerVariables
 /;
 
@@ -326,7 +309,6 @@ $inner;
 
 with 'Template::Caribou::Files' => {
     dirs => [ '$bou_dir' ],
-    auto_reload => $auto_reload,
 };
 
 1;
@@ -356,11 +338,11 @@ sub render {
         $c =~ s#/#::#g;
         $c = join '::', $self->namespace, $c;
         die "template '$template' not found\n"
-            unless eval { $c->DOES('Template::Caribou') };
+            unless eval { $c->DOES('Template::Caribou::Role') };
         $class = $c;
     }
 
-    if ( my $lay = $self->layout || $self->context->app->config->{layout} ) {
+    if ( my $lay = $self->layout || $self->settings->{layout} ) {
         my $role = $self->layout_class->{$lay}
             or die "layout '$lay' not defined\n";
 
@@ -368,7 +350,7 @@ sub render {
         )
     }
 
-    return $class->new( context => $self->context, app => $self->context->app, %$tokens)->render('page');
+    return $class->new( request => $self->request,  %$tokens)->render('page');
 }
 
 1;

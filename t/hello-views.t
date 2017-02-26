@@ -3,24 +3,30 @@ package MyApp;
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More tests => 8;
 
 use Dancer2;
-use Dancer2::Test;
+use Test::WWW::Mechanize::PSGI;
 
 set template => 'Caribou';
 
+my $mech = Test::WWW::Mechanize::PSGI->new(
+    app => MyApp->to_app,
+);
+
 get '/hi/:name' => sub {
-    template 'welcome' => { name => param('name') };
+    template 'welcome' => { name => route_parameters->get('name') };
 };
 
-response_content_like '/hi/yanick' => qr/hello yanick/;
+$mech->get_ok( '/hi/yanick' );
+$mech->content_contains( 'hello yanick' );
 
 get '/howdie/:name' => sub {
     template 'howdie' => { name => param('name') };
 };
 
-response_content_like '/howdie/yanick' => qr/howdie yanick/;
+$mech->get_ok( '/howdie/yanick' );
+$mech->content_contains( 'howdie yanick' );
 
 get '/hullo/:name' => sub {
     
@@ -32,6 +38,8 @@ get '/dancer_variables' => sub {
     template 'dancer_variables';
 };
 
-response_content_like '/hullo/yanick' => qr/hullo yanick/;
-response_content_like '/dancer_variables' => qr#http://localhost/foo#;
-response_content_like '/dancer_variables' => qr#context: Dancer2::Core::Context#;
+$mech->get_ok( '/hullo/yanick' );
+$mech->content_contains( 'hullo yanick' );
+
+$mech->get_ok( '/dancer_variables' );
+$mech->content_contains( 'foo' );
