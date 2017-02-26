@@ -1,3 +1,4 @@
 /Dancer2-Template-Caribou*
 .build
 .direnv
+.envrc
