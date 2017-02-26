@@ -2,6 +2,7 @@ Revision history for Dancer2-Template-Caribou
 
 {{$NEXT}}
  [API CHANGES]
+ - Support Template::Caribou v1.2.0+
 
  [BUG FIXES]
 
