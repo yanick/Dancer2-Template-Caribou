@@ -31,13 +31,13 @@ use warnings;
 
 use Moose::Role;
 
-=method context()
+=method request()
 
-Returns the current L<Dancer2::Core::Context> object.
+Returns the current L<Dancer2::Core::Request> object.
 
 =cut
 
-has "context" => (
+has "request" => (
     is => 'ro',
 );
 
@@ -48,7 +48,7 @@ Returns the absolute url for the given C<$path>.
 =cut
 
 sub uri_for {
-    $_[0]->context->request->uri_for($_[1]);
+    $_[0]->request->uri_for($_[1]);
 }
 
 1;
