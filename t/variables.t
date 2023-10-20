@@ -3,7 +3,7 @@ use warnings;
 
 package MyApp;
 
-use Test::More tests => 2;
+use Test2::V0; plan 2;
 use Dancer2;
 use Test::WWW::Mechanize::PSGI;
 
