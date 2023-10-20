@@ -1,8 +1,0 @@
-^dist.ini
-^MANIFEST.SKIP
-Dancer2-Template-Caribou.*
-^\.gitignore
-^\.git
-^\.build
-
-.travis.yml
